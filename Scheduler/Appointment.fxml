@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="Anchor" prefHeight="509.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jdbcmain.AppointmentController">
+   <children>
+      <TabPane layoutX="41.0" layoutY="107.0" prefHeight="345.0" prefWidth="1228.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="By Month">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="316.0" prefWidth="755.0">
+                     <children>
+                        <TableView fx:id="appointmentView1" layoutX="3.0" layoutY="80.0" prefHeight="236.0" prefWidth="1228.0">
+                          <columns>
+                            <TableColumn fx:id="appointmentId1" prefWidth="75.0" text="Appt. Id" />
+                            <TableColumn fx:id="customerId1" prefWidth="75.0" text="Customer Id" />
+                              <TableColumn fx:id="userId1" prefWidth="75.0" text="User Id " />
+                              <TableColumn fx:id="title1" prefWidth="75.0" text="Title" />
+                              <TableColumn fx:id="description1" prefWidth="75.0" text="Description" />
+                              <TableColumn fx:id="location1" prefWidth="75.0" text="Location" />
+                              <TableColumn fx:id="contact1" prefWidth="75.0" text="Contact" />
+                              <TableColumn fx:id="type1" prefWidth="75.0" text="Type" />
+                              <TableColumn fx:id="Url1" prefWidth="75.0" text="URL" />
+                              <TableColumn fx:id="start1" prefWidth="75.0" text="Start" />
+                              <TableColumn fx:id="end1" prefWidth="75.0" text="End" />
+                              <TableColumn fx:id="createDate1" prefWidth="75.0" text="Date Created" />
+                              <TableColumn fx:id="createdBy1" prefWidth="75.0" text="Created By" />
+                              <TableColumn fx:id="lastUpdate1" prefWidth="75.0" text="Last Updated" />
+                              <TableColumn fx:id="lastUpdateBy1" prefWidth="75.0" text="Last Updated By" />
+                          </columns>
+                        </TableView>
+                        <ComboBox fx:id="MonthComboBox" layoutX="318.0" layoutY="17.0" onAction="#ChoiceHandler" prefWidth="150.0" promptText="Month" />
+                        <TextField fx:id="WeekField" layoutX="638.0" layoutY="16.0" promptText="1-52(53)" />
+                        <Label layoutX="508.0" layoutY="19.0" text="Enter Week of Year:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="EnterButton" layoutX="795.0" layoutY="14.0" mnemonicParsing="false" onAction="#ChoiceHandler1" text="Enter" />
+                        <Label layoutX="310.0" layoutY="52.0" text="*NOTE: Select &quot;00&quot; to return all results again." textFill="#ee0c0c">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="207.0" layoutY="19.0" text="Select Month:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="416.0" layoutY="59.0" text="Appointment Page" textFill="#1953e8">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="916.0" layoutY="470.0" prefHeight="25.0" prefWidth="353.0">
+         <buttons>
+            <Button fx:id="appointmentAdd" mnemonicParsing="false" onAction="#AddHandler2" text="Add" />
+            <Button fx:id="appointmentDelete" mnemonicParsing="false" onAction="#DeleteHandler2" text="Delete" />
+            <Button fx:id="appointmentUpdate" mnemonicParsing="false" onAction="#UpdateHandler2" text="Update" />
+            <Button fx:id="appointmentBack" layoutX="288.0" layoutY="10.0" mnemonicParsing="false" onAction="#BackHandler" text="Back" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
